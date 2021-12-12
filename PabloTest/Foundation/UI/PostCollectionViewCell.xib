@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PostCollectionViewCell" customModule="PabloTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="140"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNC-Wh-kYd">
+                        <rect key="frame" x="8" y="8" width="324" height="124"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jXe-lI-IrN">
+                                <rect key="frame" x="8" y="8" width="308" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$title" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgu-hX-8ts">
+                                        <rect key="frame" x="0.0" y="0.0" width="308" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" red="0.24313725489999999" green="0.36862745099999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$body" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcP-2m-7V1">
+                                        <rect key="frame" x="0.0" y="22" width="308" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jXe-lI-IrN" secondAttribute="bottom" constant="8" id="h7K-Ij-wUV"/>
+                            <constraint firstAttribute="trailing" secondItem="jXe-lI-IrN" secondAttribute="trailing" constant="8" id="iq9-WJ-fcj"/>
+                            <constraint firstItem="jXe-lI-IrN" firstAttribute="top" secondItem="QNC-Wh-kYd" secondAttribute="top" constant="8" id="kl7-8D-y7K"/>
+                            <constraint firstItem="jXe-lI-IrN" firstAttribute="leading" secondItem="QNC-Wh-kYd" secondAttribute="leading" constant="8" id="yUY-CP-kAz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="QNC-Wh-kYd" secondAttribute="bottom" constant="8" id="PMQ-c6-5ws"/>
+                <constraint firstItem="QNC-Wh-kYd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="TLE-YG-qZI"/>
+                <constraint firstAttribute="trailing" secondItem="QNC-Wh-kYd" secondAttribute="trailing" constant="8" id="oFK-QD-VIa"/>
+                <constraint firstItem="QNC-Wh-kYd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="zeK-J2-v1u"/>
+            </constraints>
+            <size key="customSize" width="354" height="130"/>
+            <connections>
+                <outlet property="bodyLabel" destination="DcP-2m-7V1" id="pOH-Iu-EPZ"/>
+                <outlet property="titleLabel" destination="Dgu-hX-8ts" id="kmG-ut-pWW"/>
+            </connections>
+            <point key="canvasLocation" x="356.52173913043481" y="153.34821428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
