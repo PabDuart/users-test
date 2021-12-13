@@ -8,7 +8,6 @@
 import UIKit
 
 class DesignableView: UIView {
-    
     @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth

@@ -22,7 +22,7 @@ final class UserCollectionViewCell: UICollectionViewCell {
     
     // MARK: Vars
     weak var delegate: UserCollectionViewCellDelegate?
-    var user: User?
+    private var user: User?
     
     // MARK: Functions
     func configureCell(with user: User, and delegate: UserCollectionViewCellDelegate) {

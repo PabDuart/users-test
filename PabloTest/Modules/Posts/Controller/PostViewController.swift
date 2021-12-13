@@ -15,83 +15,79 @@ protocol PostViewControllerProtocol: AnyObject {
 final class PostViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var mailLabel: UILabel!
-    @IBOutlet private weak var collectionViewPost: UICollectionView!
+    @IBOutlet private weak var phoneLabel: UILabel!
+    @IBOutlet private weak var mailLabel: UILabel!
+    @IBOutlet private weak var postsTitleLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
     // MARK: Vars
     var user: User?
     private var viewModel: PostViewModelProtocol = PostViewModel()
     private var posts: [Post] = [] {
         didSet {
-            DispatchQueue.main.async {
-                self.collectionViewPost.reloadData()
-            }
+            tableView.reloadData()
         }
     }
     
+    // MARK: ViewController Life's Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        title = user?.name
+        setupTableView()
         setupValues()
-        setupView()
         viewModel.delegate = self
         if let userId = user?.id {
             viewModel.syncPosts(userId: userId)
         }
+        showLoadingIndicator(true)
     }
     
-    func setupCollectionView() {
-        collectionViewPost.delegate = self
-        collectionViewPost.dataSource = self
-        collectionViewPost.register(UINib(nibName: String(describing: PostCollectionViewCell.self),bundle: nil), forCellWithReuseIdentifier: String(describing: PostCollectionViewCell.self))
-    }
-    
-    private func setupView() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "iconAtras"),
-            style: .done, target: self,
-            action: #selector(didTapGoBackButton))
+    // MARK: Functions
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: String(describing: PostTableViewCell.self), bundle: nil),
+                           forCellReuseIdentifier: String(describing: PostTableViewCell.self))
     }
     
     private func setupValues() {
-        nameLabel.text = user?.name
         phoneLabel.text = user?.phone
         mailLabel.text = user?.email
+        postsTitleLabel.text = String(format: AppConstants.String.postsTitle, user?.name ?? "")
+    }
+    
+    private func showLoadingIndicator(_ show: Bool) {
+        loadingIndicator.isHidden = !show
     }
 }
 
-extension PostViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//MARK: - TableView Configuration
+extension PostViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PostCollectionViewCell.self), for: indexPath) as! PostCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as! PostTableViewCell
         cell.configureCell(with: posts[indexPath.row])
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 140)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(0)
-    }
 }
 
+//MARK: - PostViewControllerProtocol
 extension PostViewController: PostViewControllerProtocol {
     func didRetrievePosts(_ posts: [Post]) {
-        self.posts = posts
+        DispatchQueue.main.async {
+            self.showLoadingIndicator(false)
+            self.posts = posts
+        }
     }
     
     func didFailRetrievingData(message: String) {
-        self.showToast(message: message)
-    }
-    
-    @objc private func didTapGoBackButton() {
-        navigationController?.popViewController(animated: true)
+        DispatchQueue.main.async {
+            self.showLoadingIndicator(false)
+            self.showToast(message: message)
+        }
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class BaseServices: NSObject {
     
-    typealias CompletionBlock = (Any?, Error?) -> ()
+    typealias CompletionBlock = (Decodable?, Error?) -> ()
     
     //MARK: Static functions
     static func requestGET<T: Decodable>(url: String, responseType: T.Type, completion: @escaping CompletionBlock) {
@@ -20,7 +20,6 @@ class BaseServices: NSObject {
 //MARK:- Private functions
 private extension BaseServices {
     static func request<T: Decodable>(url: String, responseType: T.Type, completion: @escaping CompletionBlock) {
-        
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         

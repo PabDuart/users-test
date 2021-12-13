@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356D252C2766EA6000220602 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D252B2766EA6000220602 /* AppSettings.swift */; };
+		356D252F2766FBE100220602 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D252D2766FBE100220602 /* PostTableViewCell.swift */; };
+		356D25302766FBE100220602 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356D252E2766FBE100220602 /* PostTableViewCell.xib */; };
+		356D25332767047F00220602 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356D25312767047F00220602 /* Database.xcdatamodeld */; };
+		356D2535276708BE00220602 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D2534276708BE00220602 /* CoreDataService.swift */; };
+		356D25372767123600220602 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D25362767123600220602 /* UICollectionView+Extension.swift */; };
 		6E899AEB276503D900724B62 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E899AE9276503D900724B62 /* PostViewController.swift */; };
 		6E899AEC276503D900724B62 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E899AEA276503D900724B62 /* PostViewController.xib */; };
 		6E899AF92765090900724B62 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E899AF82765090900724B62 /* PostViewModel.swift */; };
-		6E899B0A2765289700724B62 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E899B082765289700724B62 /* PostCollectionViewCell.swift */; };
-		6E899B0B2765289700724B62 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E899B092765289700724B62 /* PostCollectionViewCell.xib */; };
 		6E9C95F82763F72B00D78C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9C95F72763F72B00D78C58 /* AppDelegate.swift */; };
 		6E9C96012763F72C00D78C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E9C96002763F72C00D78C58 /* Assets.xcassets */; };
 		6E9C96042763F72C00D78C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9C96022763F72C00D78C58 /* LaunchScreen.storyboard */; };
@@ -31,11 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		356D252B2766EA6000220602 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		356D252D2766FBE100220602 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		356D252E2766FBE100220602 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		356D25322767047F00220602 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		356D2534276708BE00220602 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		356D25362767123600220602 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		6E899AE9276503D900724B62 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		6E899AEA276503D900724B62 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
 		6E899AF82765090900724B62 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
-		6E899B082765289700724B62 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
-		6E899B092765289700724B62 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E9C95F42763F72B00D78C58 /* PabloTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PabloTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9C95F72763F72B00D78C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E9C96002763F72C00D78C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,8 +165,8 @@
 		6E899B05276523E400724B62 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6E899B082765289700724B62 /* PostCollectionViewCell.swift */,
-				6E899B092765289700724B62 /* PostCollectionViewCell.xib */,
+				356D252D2766FBE100220602 /* PostTableViewCell.swift */,
+				356D252E2766FBE100220602 /* PostTableViewCell.xib */,
 				6E9C9639276422CB00D78C58 /* UserCollectionViewCell.swift */,
 				6E9C963A276422CB00D78C58 /* UserCollectionViewCell.xib */,
 			);
@@ -190,6 +198,7 @@
 				6E9C96002763F72C00D78C58 /* Assets.xcassets */,
 				6E9C96022763F72C00D78C58 /* LaunchScreen.storyboard */,
 				6E9C96052763F72C00D78C58 /* Info.plist */,
+				356D25312767047F00220602 /* Database.xcdatamodeld */,
 			);
 			path = PabloTest;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 		6E9C963327641AE400D78C58 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				356D25362767123600220602 /* UICollectionView+Extension.swift */,
 				6E9C962E276412CE00D78C58 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
@@ -217,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6E9C964027643EAD00D78C58 /* BaseServices.swift */,
+				356D2534276708BE00220602 /* CoreDataService.swift */,
 				6E9C9656276448DA00D78C58 /* UsersService.swift */,
 				6E9C966D276466BA00D78C58 /* PostsService.swift */,
 			);
@@ -227,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				6E9C961A2763FEE200D78C58 /* AppConstants.swift */,
+				356D252B2766EA6000220602 /* AppSettings.swift */,
 				6E9C96662764598F00D78C58 /* DesignableView.swift */,
 			);
 			path = Settings;
@@ -306,9 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E899AEC276503D900724B62 /* PostViewController.xib in Resources */,
-				6E899B0B2765289700724B62 /* PostCollectionViewCell.xib in Resources */,
 				6E9C963C276422CB00D78C58 /* UserCollectionViewCell.xib in Resources */,
 				6E9C96042763F72C00D78C58 /* LaunchScreen.storyboard in Resources */,
+				356D25302766FBE100220602 /* PostTableViewCell.xib in Resources */,
 				6E9C96102763FA1E00D78C58 /* UserViewController.xib in Resources */,
 				6E9C96012763F72C00D78C58 /* Assets.xcassets in Resources */,
 			);
@@ -323,8 +335,10 @@
 			files = (
 				6E9C962F276412CE00D78C58 /* UIViewController+Extension.swift in Sources */,
 				6E9C9674276468A600D78C58 /* Post.swift in Sources */,
+				356D252F2766FBE100220602 /* PostTableViewCell.swift in Sources */,
 				6E9C960F2763FA1E00D78C58 /* UserViewController.swift in Sources */,
 				6E899AF92765090900724B62 /* PostViewModel.swift in Sources */,
+				356D25332767047F00220602 /* Database.xcdatamodeld in Sources */,
 				6E9C964127643EAD00D78C58 /* BaseServices.swift in Sources */,
 				6E9C96672764598F00D78C58 /* DesignableView.swift in Sources */,
 				6E899AEB276503D900724B62 /* PostViewController.swift in Sources */,
@@ -334,7 +348,9 @@
 				6E9C966E276466BA00D78C58 /* PostsService.swift in Sources */,
 				6E9C9657276448DA00D78C58 /* UsersService.swift in Sources */,
 				6E9C95F82763F72B00D78C58 /* AppDelegate.swift in Sources */,
-				6E899B0A2765289700724B62 /* PostCollectionViewCell.swift in Sources */,
+				356D252C2766EA6000220602 /* AppSettings.swift in Sources */,
+				356D25372767123600220602 /* UICollectionView+Extension.swift in Sources */,
+				356D2535276708BE00220602 /* CoreDataService.swift in Sources */,
 				6E9C963B276422CB00D78C58 /* UserCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +545,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		356D25312767047F00220602 /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				356D25322767047F00220602 /* Database.xcdatamodel */,
+			);
+			currentVersion = 356D25322767047F00220602 /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6E9C95EC2763F72A00D78C58 /* Project object */;
 }

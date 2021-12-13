@@ -13,7 +13,9 @@ struct AppConstants {
     }
     
     struct String {
-        static let AppNavigationTitle = "Prueba de Ingreso"
-        static let errorMessage = "Error al Cargar"
+        static let mainTitle = "Prueba de Ingreso"
+        static let listEmpty = "List is empty"
+        static let errorMessage = "Error al cargar"
+        static let postsTitle = "Posts de %@"
     }
 }
